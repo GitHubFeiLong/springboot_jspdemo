@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mf</groupId>
+  <artifactId>springboot_jspdemo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <!--spring-boot-starter-parent 整合第三方常用框架依赖信息(各种依赖信息)-->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.0.0.RELEASE</version>
+  </parent>
+
+  <dependencies>
+    <!--添加 spring-boot-starter-web 模块依赖-->
+    <!--
+        spring-boot-starter-web 是springBoot 整合springMVC web
+        实现原理：Maven依赖继承关系，相当于把第三方常用maven依赖信息，在parent 项目中封装好了，使用
+        springboot 提供依赖信息关联整合的jar包
+        在springboot中 快速开发原理（Maven 子父依赖关系）springboot 对常用依赖信息的封装
+     -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <!--可以不用写版本号在parent中已经写好了-->
+      <!--<version>2.0.0.RELEASE</version>-->
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+    </dependency>
+    <!--springboot 外部tomcat支持-->
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-jasper</artifactId>
+    </dependency>
+  </dependencies>
+</project>
